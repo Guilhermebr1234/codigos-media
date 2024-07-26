@@ -1,0 +1,154 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+
+public class Main {
+private static ArrayList<Pessoa> pessoas = new ArrayList<>();
+private static Scanner scanner = new Scanner(System.in);
+
+public static void main(String[] args) {
+boolean continuar = true;
+
+while (continuar) {
+System.out.println("\nEscolha uma opção:");
+System.out.println("1 - Adicionar Pessoa");
+System.out.println("2 - Listar Pessoas");
+System.out.println("3 - Atualizar Pessoa");
+System.out.println("4 - Remover Pessoa");
+System.out.println("5 - estatistica");
+System.out.println("6 - Sair");
+System.out.print("Opção: ");
+
+int opcao = scanner.nextInt();
+scanner.nextLine(); // Limpar o buffer do scanner
+
+switch (opcao) {
+case 1:
+adicionarPessoa();
+break;
+case 2:
+listarPessoas();
+break;
+case 3:
+atualizarPessoa();
+break;
+case 4:
+removerPessoa();
+break;
+case 5:
+estatistica();
+break;
+case 6:
+sair();
+continuar = false;
+break;
+case:
+System.out.println("Saindo...");
+System.out.println("Opção inválida. Tente novamente.");
+}
+}
+
+scanner.close();
+
+
+
+
+
+private static void adicionarPessoa() {
+System.out.print("Nome: ");
+String nome = scanner.nextLine();
+System.out.print("Media: ");
+int media = scanner.nextInt();
+System.out.print("Materia: ");
+String materia = scanner.nextLine();
+scanner.nextLine(); // Limpar o buffer do scanner
+
+Pessoa pessoa = new Pessoa(nome, materia, media);
+pessoas.add(pessoa);
+
+System.out.println("Pessoa adicionada com sucesso!");
+}
+
+private static void listarPessoas() {
+if (pessoas.isEmpty()) {
+System.out.println("Não há pessoas cadastradas.");
+} else {
+System.out.println("Lista de Pessoas:");
+for (Pessoa pessoa : pessoas) {
+System.out.println(pessoa);
+}
+}
+}
+
+private static void atualizarPessoa() {
+System.out.print("Informe o índice da pessoa que deseja atualizar (começando em 0): ");
+int indice = scanner.nextInt();
+scanner.nextLine(); // Limpar o buffer do scanner
+
+if (indice >= 0 && indice < pessoas.size()) {
+System.out.print("Novo Nome: ");
+String novoNome = scanner.nextLine();
+System.out.print("Nova Media: ");
+int novoMedia = scanner.nextInt();
+System.out.print("Nova Materia: ");
+String novoMateria = scanner.nextLine();
+scanner.nextLine(); // Limpar o buffer do scanner
+
+Pessoa pessoa = pessoas.get(indice);
+pessoa.setNome(novoNome);
+pessoa.setMedia(novoMedia);
+pessoa.setMateria(novoMateria);
+
+System.out.println("Pessoa atualizada com sucesso!");
+} else {
+System.out.println("Índice inválido.");
+}
+}
+
+private static void removerPessoa() {
+System.out.print("Informe o índice da pessoa que deseja remover (começando em 0): ");
+int indice = scanner.nextInt();
+scanner.nextLine(); // Limpar o buffer do scanner
+
+if (indice >= 0 && indice < pessoas.size()) {
+Pessoa pessoaRemovida = pessoas.remove(indice);
+System.out.println("Pessoa removida: " + pessoaRemovida);
+} else {
+System.out.println("Índice inválido.");
+
+public static void estatistica(){
+System.out.println("digite o nome do aluno:");
+scanner.nextLine();
+System.out.println("digite a nota:");
+scanner.nextInt();
+    int pontos = 70;
+
+    if(pontos>=70); {
+
+
+
+        System.out.println("aprovado");
+    } if (pontos<=6);{
+
+
+        System.out.println("reprovado");
+    }
+
+
+
+
+
+}
+
+}
+}
+}
+}
+}
+
+
+
+
+
+
